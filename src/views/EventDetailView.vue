@@ -8,7 +8,6 @@
 
 <script>
 import EventService from '@/services/EventService'
-
 export default {
   props: ['id'],
   data() {
@@ -17,9 +16,9 @@ export default {
     }
   },
   created() {
-    EventService.getEvents()
+    EventService.getEvent(this.id)
       .then((response) => {
-        this.events = response.data
+        this.event = response.data
       })
       .catch((error) => {
         console.log(error)
