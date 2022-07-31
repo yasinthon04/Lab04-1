@@ -5,6 +5,9 @@ import EventDetails from '../views/events/EventDetailView.vue'
 import EventRegisterView from '../views/events/EventRegisterView.vue'
 import EventEditView from '../views/events/EventEditView.vue'
 import EventLayoutView from '../views/events/EventLayoutView.vue'
+import NotFoundView from '../views/NotFoundView.vue'
+import NetworkErrorView from '../views/NetworkErrorView.vue'
+
 const routes = [
   {
     path: '/',
@@ -45,6 +48,22 @@ const routes = [
         props: true
       }
     ]
+  },
+  {
+    path: '/404/:resource',
+    name: '404Resource',
+    component: NotFoundView,
+    props: true
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'Notfound',
+    component: NotFoundView
+  },
+  {
+    path: '/network-error',
+    name: 'NetworkError',
+    component: NetworkErrorView
   }
 ]
 
