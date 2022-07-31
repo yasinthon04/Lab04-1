@@ -8,6 +8,7 @@
 
 <script>
 import EventService from '@/services/EventService'
+
 export default {
   props: ['id'],
   data() {
